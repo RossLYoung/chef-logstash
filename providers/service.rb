@@ -96,7 +96,7 @@ action :enable do
     new_resource.updated_by_last_action(ri.updated_by_last_action?)
 
   when 'native'
-    native_init = ::Logstash.determine_native_init(node)
+    native_init = 'sysvinit'
     args = default_args
 
     if native_init == 'upstart'
